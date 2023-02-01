@@ -10,8 +10,8 @@ UCLASS()
 class TOONTANKS_API AProjectile : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AProjectile();
 
@@ -20,12 +20,13 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
-	UStaticMeshComponent* projectileMesh;
+	UStaticMeshComponent *projectileMesh;
 
-public:	
+	UPROPERTY(VisibleAnywhere, Category = "Movement")
+	class UProjectileMovementComponent *projectileMovementComponent;
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 };
