@@ -29,3 +29,8 @@ void ABasePawn::RotateTurret(FVector _lookAtTarget)
 	FRotator lookAtRotation = FRotator(.0f, toTarget.Rotation().Yaw, .0f);
 	turretMesh->SetWorldRotation(FMath::RInterpTo(turretMesh->GetComponentRotation(), lookAtRotation, UGameplayStatics::GetWorldDeltaSeconds(this), 10.0f));
 }
+
+void ABasePawn::Fire()
+{
+	FVector projectileSpawnPointLocation = projectileSpawnPoint->GetComponentLocation();
+}
