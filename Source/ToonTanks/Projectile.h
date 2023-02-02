@@ -26,6 +26,12 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Movement")
 	class UProjectileMovementComponent *projectileMovementComponent;
 
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* _hitComp, AActor* _otherActor, UPrimitiveComponent* _otherComp, FVector _normalImpulse, const FHitResult& _hit);
+
+	UPROPERTY(EditAnywhere)
+	float damage = 50.0f;
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
