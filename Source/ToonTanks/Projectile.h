@@ -9,6 +9,7 @@
 class UParticleSystem;
 class UParticleSystemComponent;
 class USoundBase;
+class UCameraShakeBase;
 
 UCLASS()
 class TOONTANKS_API AProjectile : public AActor
@@ -47,6 +48,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	USoundBase *hitSound;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TSubclassOf<UCameraShakeBase> hitCameraShakeClass;
 
 public:
 	// Called every frame

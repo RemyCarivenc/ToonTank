@@ -17,6 +17,15 @@ public:
 
 	void HandleDestruction();
 
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class UParticleSystem *deathParticles;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class USoundBase *deathSound;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TSubclassOf<class UCameraShakeBase> deathCameraShakeClass;
+
 protected:
 	void RotateTurret(FVector _lookAtTarget);
 	void Fire();
@@ -37,9 +46,4 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
 	TSubclassOf<class AProjectile> projectileClass;
 
-	UPROPERTY(EditAnywhere, Category = "Combat")
-	class UParticleSystem *deathParticles;
-
-	UPROPERTY(EditAnywhere, Category = "Combat")
-	class USoundBase *deathSound;
 };
