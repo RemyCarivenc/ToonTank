@@ -6,6 +6,10 @@
 #include "GameFramework/Actor.h"
 #include "Projectile.generated.h"
 
+class UParticleSystem;
+class UParticleSystemComponent;
+class USoundBase;
+
 UCLASS()
 class TOONTANKS_API AProjectile : public AActor
 {
@@ -33,10 +37,16 @@ private:
 	float damage = 50.0f;
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
-	class UParticleSystem *hitParticles;
+	UParticleSystem *hitParticles;
 
 	UPROPERTY(VisibleAnywhere, Category = "Combat")
-	class UParticleSystemComponent *trailParticles;
+	UParticleSystemComponent *trailParticles;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	USoundBase *launchSound;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	USoundBase *hitSound;
 
 public:
 	// Called every frame
