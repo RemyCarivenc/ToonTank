@@ -27,10 +27,13 @@ private:
 	class UProjectileMovementComponent *projectileMovementComponent;
 
 	UFUNCTION()
-	void OnHit(UPrimitiveComponent* _hitComp, AActor* _otherActor, UPrimitiveComponent* _otherComp, FVector _normalImpulse, const FHitResult& _hit);
+	void OnHit(UPrimitiveComponent *_hitComp, AActor *_otherActor, UPrimitiveComponent *_otherComp, FVector _normalImpulse, const FHitResult &_hit);
 
 	UPROPERTY(EditAnywhere)
 	float damage = 50.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class UParticleSystem *hitParticles;
 
 public:
 	// Called every frame
